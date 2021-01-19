@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} Вхід {% endblock %}
+
+{% block content %}
+<style type="text/css">
+	input {
+		margin: 0.5vh;
+		padding: 0.5vh;
+	}
+</style>
+<form action="{% url 'trainings:log_in' %}">
+	<input type="text" required placeholder="нікнейм" maxlength="30" name="nickname"><br>
+	<input type="text" required placeholder="пароль" maxlength="40" name="password"><br>
+	<button type="submit">Увійти</button>
+</form>
+{% endblock %}

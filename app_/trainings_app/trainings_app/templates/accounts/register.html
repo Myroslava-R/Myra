@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %} Реєстрація {% endblock %}
+
+{% block content %}
+<style type="text/css">
+	input {
+		margin: 0.5vh;
+		padding: 0.5vh;
+	}
+
+	.hidden_text {
+		margin-top: 200vh;
+	}
+</style>
+<form action="{% url 'trainings:create_person' %}">
+	<input type="text" required placeholder="нікнейм" maxlength="30" name="nickname"><br>
+<!-- 	{% if nickname_error %} 
+	<font color="#f00">{{nickname_error}}</font><br>
+	{% endif %} -->
+	<input type="text" required placeholder="пароль" maxlength="40" name="password"><br>
+<!-- 	{% if password_error %} 
+	<font color="#f00">{{password_error}}</font><br>
+	{% endif %} -->
+	А тепер більш детально про вас<br>
+	<input type="text" required placeholder="ім'я" maxlength="30" name="name"><br>
+	<input type="tel" required placeholder="номер телефону" maxlength="30" name="phone"><br>
+	<input type="number" min="6" max="120" step="1" required placeholder="вік" name="age"><br>
+	<input type="email" required placeholder="email" name="email"><br>
+	ваша приблизна фіз підготовка (0 - не можу стояти, 100 я повний/а сил і відчуваю себе краще нікуди) :<br>
+	<input type="number" min="0" max="100" step="1" required placeholder="0...100" name="condition"><br>
+	<button type="submit">Зареєструватися*</button>
+</form>
+<div class="hidden_text">
+	<font color="#000">* реєструючись ви згоджуєтесь надати свої персональні дані на обробку та згоджуєтесь з правовою політикою сайту</font>
+</div>
+{% endblock %}

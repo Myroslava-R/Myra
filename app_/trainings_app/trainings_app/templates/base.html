@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %} roller training  {% endblock %}</title>
+	<style type="text/css">
+
+		body {
+			margin: 0;
+			background: #292929;
+			color: #fff;
+			font-family: calibri;
+			font-size: 1.5vh;
+		}
+
+		a {
+			text-decoration: none;
+			color: #fff;
+		}
+
+		::-webkit-scrollbar {
+			width: 1vh;
+			height: 1vh;
+			position: fixed;
+		}
+
+		::-webkit-scrollbar-track {
+			background: #444;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background: #888;
+		}
+
+		header {
+			display: flex;
+			flex-wrap: wrap;
+			background: rgb(20,20,20);
+		}
+
+		header > a, header > div {
+			color: #fff;
+			font-size: 2vh;
+			line-height: 3vh;
+			padding: 1vh 1vh;
+			transition-duration: 0.3s;
+			/*background: #001;*/
+		}
+
+		header > a:hover, header > div:hover {
+			transition-duration: 0.5s;
+			background: rgb(20,80,20);
+		}
+
+	</style>
+</head>
+<body>
+	<header>
+		<a href="{% url 'trainings:training_list_view' %}">Список тренувань</a>
+		{% if login %}
+			<div>користувач: {{login.nickname}}</div>
+			<a href="{% url 'trainings:log_out' %}">вийти</a>
+		{% else %}
+			<a href="{% url 'trainings:log_in_view' %}">увійти</a>
+			<a href="{% url 'trainings:register_view' %}">зареєструватись</a>
+		{% endif %}
+		<a href="/admin">admin</a>
+	</header>
+	{% block content %} схоже виникла якась помилка) {% endblock %}
+</body>
+</html>

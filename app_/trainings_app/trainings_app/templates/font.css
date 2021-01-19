@@ -1,0 +1,39 @@
+@font-face {
+	font-family: blogger_b; 
+	src: url(font/Blogger/Blogger_Sans-Bold.ttf);
+}
+
+@font-face {
+	font-family: blogger_bi; 
+	src: url(font/Blogger/Blogger_Sans-Bold_Italic.ttf);
+}
+
+@font-face {
+	font-family: blogger_m; 
+	src: url(font/Blogger/Blogger_Sans-Medium.ttf);
+}
+
+@font-face {
+	font-family: blogger_mi; 
+	src: url(font/Blogger/Blogger_Sans-Medium_Italic.ttf);
+}
+
+@font-face {
+	font-family: blogger; 
+	src: url(font/Blogger/Blogger_Sans.ttf);
+}
+
+@font-face {
+	font-family: blogger_i; 
+	src: url(font/Blogger/Blogger_Sans-Italic.ttf);
+}
+
+@font-face {
+	font-family: blogger_l; 
+	src: url(font/Blogger/Blogger_Sans-Light.ttf);
+}
+
+@font-face {
+	font-family: blogger_li; 
+	src: url(font/Blogger/Blogger_Sans-Light_Italic.ttf);
+}

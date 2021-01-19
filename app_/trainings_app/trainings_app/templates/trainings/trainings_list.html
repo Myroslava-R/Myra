@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %} Список походів {% endblock %}
+
+{% block content %} 
+	{% if training_list %}
+		<style type="text/css">
+			.all_list {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+			}
+
+			.training_details_link {
+				color: #fff;
+				width: 100vh;
+				background: rgb(20,20,20);
+				border-radius: 1vh;
+    			overflow: hidden;
+    			margin: 1vh;
+			}
+
+			@media (max-width: 100vh) {
+				.training_details_link {
+					width: 100vw;
+					border-radius: 0vh;
+				}
+			}
+
+			.training_details_link > .img > img {
+				height: 25vh;
+				width: 100%;
+				object-fit: cover;
+
+			}
+
+			.training_details_link > .name {
+				margin: 0 1.5vh;
+				font-size: 5vh;
+			}
+
+			.training_details_link > .reg {
+				margin: 1vh 1.5vh;
+				font-size: 1.5vh;
+			}
+
+
+		</style>
+		<div>
+			{% for a in training_list %}
+				<a href="{% url 'trainings:training_view' a.id %}">
+					<div >
+						<div ><img src="{{a.photo_url}}"></div>
+						<div >{{a.name}}</div>
+						<div >{{a.regione}}</div>
+					</div>	
+				</a>
+			{% endfor %}
+		</div>
+	{% else %}
+		нічого не знайдено
+	{% endif %}
+{% endblock %}

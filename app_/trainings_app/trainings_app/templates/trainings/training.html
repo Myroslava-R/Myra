@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %} {{training}} {% endblock %}
+
+{% block content %}
+<style type="text/css">
+	img {
+		width: 40vw;
+	}
+
+	.h1 {
+		font-size: 5vh;
+	}
+
+	a {
+		font-size: 2vh;
+		color: #0a0;
+	}
+
+	@media (max-width: 100vh) {
+		img {
+			width: 100%;
+		}
+	}
+</style>
+
+<div>{{training.name}}</div><br>
+<img src="{{training.photo_url}}"><br>
+{{training.regione}}<br>
+<pre>
+складність                    : {{training.difficulty}}
+</pre>
+
+{% if login %}
+	<a href="{% url 'trainings:add_person' training.id %}">прийняти участь в training</a>
+{% else %}
+	<font color="#f00">Зареєструйтесь або ввійдіть для того щоб мати можливіть взяти участь в поході</font>
+{% endif %}
+
+
+{% endblock %}
